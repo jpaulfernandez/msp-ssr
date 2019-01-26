@@ -2,16 +2,15 @@
 # are running the same version of Node.
 FROM node:10.10.0-alpine
 
-# set working directory
-RUN mkdir app
-WORKDIR /app
+WORKDIR /usr/src/app
 
-# add `/usr/src/app/node_modules/.bin` to $PATH
-ENV PATH /app/node_modules/.bin:$PATH
 ENV NODE_ENV development
-# install and cache app dependencies
-COPY package.json /app/package.json
 RUN npm install --silent
-
+COPY . .
 # start app
+EXPOSE 5000
 CMD npm start
+# If you are building your code for production
+# RUN npm install --only=production
+
+# Bundle app source

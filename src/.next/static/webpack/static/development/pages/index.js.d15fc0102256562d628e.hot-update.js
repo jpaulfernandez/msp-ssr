@@ -74,4 +74,4 @@ function (_React$Component) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.1e5cddbb7b1193899317.hot-update.js.map
+//# sourceMappingURL=index.js.d15fc0102256562d628e.hot-update.js.map

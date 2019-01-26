@@ -32,7 +32,7 @@ function (_React$Component) {
   (0, _createClass2.default)(App, [{
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", null, "Hello!");
+      return _react.default.createElement("div", null, "Hellow!");
     }
   }]);
   return App;
