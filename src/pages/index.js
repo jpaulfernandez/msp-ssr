@@ -1,7 +1,13 @@
 import React from "react";
+import {Navbar, Footer} from '../component';
+import {saveToDB} from '../services';
+
 
 export default class App extends React.Component {
+    componentDidMount() {
+        saveToDB('new user');
+    }
     render() {
-        return(<div>Hello!</div>)
+        return(<div>this is homepage!</div>)
     }
 }

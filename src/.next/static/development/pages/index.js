@@ -225,6 +225,49 @@ module.exports = function(originalModule) {
 
 /***/ }),
 
+/***/ "./component/index.js":
+/*!****************************!*\
+  !*** ./component/index.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./database/index.js":
+/*!***************************!*\
+  !*** ./database/index.js ***!
+  \***************************/
+/*! exports provided: SaveUser */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _userModel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./userModel */ "./database/userModel.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SaveUser", function() { return _userModel__WEBPACK_IMPORTED_MODULE_0__["SaveUser"]; });
+
+
+
+/***/ }),
+
+/***/ "./database/userModel.js":
+/*!*******************************!*\
+  !*** ./database/userModel.js ***!
+  \*******************************/
+/*! exports provided: SaveUser */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SaveUser", function() { return SaveUser; });
+var SaveUser = function SaveUser(user) {
+  console.log("user save");
+};
+
+/***/ }),
+
 /***/ "./pages/index.js":
 /*!************************!*\
   !*** ./pages/index.js ***!
@@ -247,6 +290,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../component */ "./component/index.js");
+/* harmony import */ var _component__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_component__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../services */ "./services/index.js");
+
+
 
 
 
@@ -266,9 +314,14 @@ function (_React$Component) {
   }
 
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(App, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      Object(_services__WEBPACK_IMPORTED_MODULE_7__["saveToDB"])('new user');
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, "Hello!");
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, "this is homepage!");
     }
   }]);
 
@@ -295,6 +348,41 @@ function (_React$Component) {
     })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/")
   
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/harmony-module.js */ "../node_modules/webpack/buildin/harmony-module.js")(module)))
+
+/***/ }),
+
+/***/ "./services/index.js":
+/*!***************************!*\
+  !*** ./services/index.js ***!
+  \***************************/
+/*! exports provided: saveToDB */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _saveToDb__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./saveToDb */ "./services/saveToDb.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "saveToDB", function() { return _saveToDb__WEBPACK_IMPORTED_MODULE_0__["saveToDB"]; });
+
+
+
+/***/ }),
+
+/***/ "./services/saveToDb.js":
+/*!******************************!*\
+  !*** ./services/saveToDb.js ***!
+  \******************************/
+/*! exports provided: saveToDB */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "saveToDB", function() { return saveToDB; });
+/* harmony import */ var _database__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../database */ "./database/index.js");
+
+var saveToDB = function saveToDB(user) {
+  console.log('saving user');
+  Object(_database__WEBPACK_IMPORTED_MODULE_0__["SaveUser"])(user);
+};
 
 /***/ }),
 

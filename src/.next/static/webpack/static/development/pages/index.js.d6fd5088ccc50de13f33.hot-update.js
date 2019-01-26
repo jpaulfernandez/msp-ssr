@@ -22,6 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../component */ "./component/index.js");
+
 
 
 
@@ -43,7 +45,7 @@ function (_React$Component) {
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(App, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, "Hello!");
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, "this is homepage!");
     }
   }]);
 
@@ -74,4 +76,4 @@ function (_React$Component) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.d15fc0102256562d628e.hot-update.js.map
+//# sourceMappingURL=index.js.d6fd5088ccc50de13f33.hot-update.js.map

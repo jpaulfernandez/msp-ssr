@@ -8,6 +8,7 @@ import helmet from 'helmet';
 import bodyParser from 'body-parser';
 
 import LRUCache from 'lru-cache';
+import mongoose from 'mongoose';
 
 
 class Server {
@@ -17,6 +18,7 @@ class Server {
         this.expressApp = express();
         this.configureExpressServer();
         this.configureCustomNextServer();
+        // this.connectToMongo();
         this.ssrCache = new LRUCache({
             max: 100 * 1024 * 1024, /* cache size will be 100 MB using `return n.length` as length() function */
             length: function (n, key) {
@@ -57,6 +59,11 @@ class Server {
             })
     
         });        
+    }
+
+    connectToMongo() {
+        let options = { server: {socketOptions: { keepAlive: 1} }};
+        return mongoose.connect('mongo://localhost:22107/msp', options);
     }
 
     static Bootstrap() {
