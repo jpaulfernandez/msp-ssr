@@ -19,6 +19,10 @@ var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits
 
 var _react = _interopRequireDefault(require("react"));
 
+var _component = require("../component");
+
+var _services = require("../services");
+
 var App =
 /*#__PURE__*/
 function (_React$Component) {
@@ -30,9 +34,14 @@ function (_React$Component) {
   }
 
   (0, _createClass2.default)(App, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      (0, _services.saveToDB)('new user');
+    }
+  }, {
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", null, "Hello!");
+      return _react.default.createElement("div", null, "this is homepage!");
     }
   }]);
   return App;
