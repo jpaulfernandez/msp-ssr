@@ -18,7 +18,12 @@ class Server {
         this.expressApp = express();
         this.configureExpressServer();
         this.configureCustomNextServer();
-        // this.connectToMongo();
+        this.connectToMongo().then(res => {
+            console.log('connected to db');
+        }, err => {
+            console.log('connection to database failed');
+            console.log(err);
+        });
         this.ssrCache = new LRUCache({
             max: 100 * 1024 * 1024, /* cache size will be 100 MB using `return n.length` as length() function */
             length: function (n, key) {
@@ -62,8 +67,20 @@ class Server {
     }
 
     connectToMongo() {
-        let options = { server: {socketOptions: { keepAlive: 1} }};
-        return mongoose.connect('mongo://localhost:22107/msp', options);
+        const options = {
+            useNewUrlParser: true,
+            useCreateIndex: true,
+            useFindAndModify: false,
+            autoIndex: false, 
+            reconnectTries: Number.MAX_VALUE, 
+            reconnectInterval: 500, 
+            poolSize: 10, 
+            bufferMaxEntries: 0,
+            connectTimeoutMS: 10000, 
+            socketTimeoutMS: 45000, 
+            family: 4 
+          };
+        return mongoose.connect('mongo://mspmongo:27017/msp', options);
     }
 
     static Bootstrap() {
