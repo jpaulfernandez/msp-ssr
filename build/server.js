@@ -31,6 +31,8 @@ var _bodyParser = _interopRequireDefault(require("body-parser"));
 
 var _lruCache = _interopRequireDefault(require("lru-cache"));
 
+var _mongoose = _interopRequireDefault(require("mongoose"));
+
 var Server =
 /*#__PURE__*/
 function () {
@@ -43,7 +45,8 @@ function () {
     });
     this.expressApp = (0, _express.default)();
     this.configureExpressServer();
-    this.configureCustomNextServer();
+    this.configureCustomNextServer(); // this.connectToMongo();
+
     this.ssrCache = new _lruCache.default({
       max: 100 * 1024 * 1024,
 
@@ -90,6 +93,18 @@ function () {
           handle(req, res);
         });
       });
+    }
+  }, {
+    key: "connectToMongo",
+    value: function connectToMongo() {
+      var options = {
+        server: {
+          socketOptions: {
+            keepAlive: 1
+          }
+        }
+      };
+      return _mongoose.default.connect('mongo://localhost:22107/msp', options);
     }
   }, {
     key: "getCacheKey",

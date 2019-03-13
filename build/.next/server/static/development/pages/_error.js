@@ -268,7 +268,7 @@ function (modules) {
 
   /******/
 
-  return __webpack_require__(__webpack_require__.s = 1);
+  return __webpack_require__(__webpack_require__.s = 2);
   /******/
 }(
 /************************************************************************/
@@ -292,7 +292,7 @@ function (modules) {
   },
 
   /***/
-  1:
+  2:
   /*!*******************************************************!*\
     !*** multi ../node_modules/next/dist/pages/_error.js ***!
     \*******************************************************/
