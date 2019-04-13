@@ -6,6 +6,7 @@ WORKDIR /usr/src/app
 
 ENV NODE_ENV development
 RUN npm install --silent
+RUN npm install -g nodemon 
 COPY . .
 # start app
 EXPOSE 5000

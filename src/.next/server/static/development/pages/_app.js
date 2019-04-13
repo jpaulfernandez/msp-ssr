@@ -93,6 +93,147 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./component/common/Navbar.js":
+/*!************************************!*\
+  !*** ./component/common/Navbar.js ***!
+  \************************************/
+/*! exports provided: Navbar */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Navbar", function() { return Navbar; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "next/link");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+var NavbarStyled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "Navbar__NavbarStyled",
+  componentId: "sc-15dp7lm-0"
+})(["width:100%;display:flex;flex-direction:row;align-content:center;box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);background:#fff;position:fixed;margin-bottom:80px;z-index:1030;top:0;left:0;right:0;.nav-brand{padding:12px;margin-left:50px;}.nav--link{width:100%;display:flex;flex-direction:row;align-content:center;margin-left:80px;& > a{margin-right:20px;text-decoration:none;color:rgba(0,0,0,0.5);padding:20px;&:hover{color:#428E65;}> strong{font-family:'Roboto-bold';}}> a.active{border-bottom:2px solid #428E65;color:#428E65;}}"]);
+var Navbar = function Navbar(_ref) {
+  var path = _ref.path;
+  // console.log(path, 'path in navbar');
+  path = "branch";
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavbarStyled, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "nav-brand"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "http://pluspng.com/img-png/user-png-icon-big-image-png-2240.png",
+    width: "50px",
+    height: "50px"
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav--link"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: path == "/" ? 'active' : ''
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Home"), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " Dasboard")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/branch",
+    prefetch: true
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: path.includes("/branch") ? 'active' : ''
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Branch"), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " Management")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/customer",
+    prefetch: true
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: path.includes("/customer") ? 'active' : ''
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Customer"), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " Management")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/product",
+    prefetch: true
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: path.includes("/product") ? 'active' : ''
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Product"), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " Management")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/transaction",
+    prefetch: true
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: path.includes("/transaction") ? 'active' : ''
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Transaction"), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), " Management"))));
+};
+
+/***/ }),
+
+/***/ "./component/common/Sidebar.js":
+/*!*************************************!*\
+  !*** ./component/common/Sidebar.js ***!
+  \*************************************/
+/*! exports provided: Sidebar */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Sidebar", function() { return Sidebar; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "next/link");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+var SidebarStyled = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "Sidebar__SidebarStyled",
+  componentId: "sc-15avss2-0"
+})(["height:100vh;width:200px;background:#428E65;display:block;padding-top:30px;position:fixed;> .title{margin-left:20px;color:#fff;}.links{display:flex;flex-direction:column;margin-top:20px;> a{padding-top:10px;padding-left:20px;padding-bottom:10px;color:#fff;text-decoration:none;&:hover{background:rgb(255,255,255,0.2);}}}"]);
+var Sidebar = function Sidebar(_ref) {
+  var hide = _ref.hide,
+      title = _ref.title,
+      links = _ref.links;
+
+  var createLinks = function createLinks() {
+    var l;
+
+    if (links) {
+      l = links.map(function (i, k) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+          href: i.path,
+          prefetch: true,
+          key: k
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, i.label));
+      });
+    }
+
+    return l;
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SidebarStyled, {
+    hide: hide
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "title"
+  }, title, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "MANAGEMENT"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "links"
+  }, createLinks()));
+};
+
+/***/ }),
+
+/***/ "./component/common/index.js":
+/*!***********************************!*\
+  !*** ./component/common/index.js ***!
+  \***********************************/
+/*! exports provided: Navbar, Sidebar */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Navbar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Navbar */ "./component/common/Navbar.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Navbar", function() { return _Navbar__WEBPACK_IMPORTED_MODULE_0__["Navbar"]; });
+
+/* harmony import */ var _Sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Sidebar */ "./component/common/Sidebar.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Sidebar", function() { return _Sidebar__WEBPACK_IMPORTED_MODULE_1__["Sidebar"]; });
+
+
+
+
+/***/ }),
+
 /***/ "./pages/_app.js":
 /*!***********************!*\
   !*** ./pages/_app.js ***!
@@ -125,6 +266,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _component_common__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../component/common */ "./component/common/index.js");
+
 
 
 
@@ -154,7 +297,13 @@ function (_App) {
       var _this$props = this.props,
           Component = _this$props.Component,
           pageProps = _this$props.pageProps;
-      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_7__["Container"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_9___default.a, null), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, pageProps));
+      var hideSidebar = pageProps.path == '/';
+      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_7__["Container"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_9___default.a, null), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_component_common__WEBPACK_IMPORTED_MODULE_11__["Navbar"], {
+        path: pageProps.path
+      }), hideSidebar ? react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", null) : react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_component_common__WEBPACK_IMPORTED_MODULE_11__["Sidebar"], {
+        title: pageProps.title,
+        links: pageProps.subLink
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, pageProps));
     }
   }], [{
     key: "getInitialProps",
@@ -317,6 +466,17 @@ module.exports = require("next/app");
 /***/ (function(module, exports) {
 
 module.exports = require("next/head");
+
+/***/ }),
+
+/***/ "next/link":
+/*!****************************!*\
+  !*** external "next/link" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/link");
 
 /***/ }),
 

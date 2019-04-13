@@ -31,6 +31,8 @@ var _head = _interopRequireDefault(require("next/head"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
+var _common = require("../component/common");
+
 var MainApp =
 /*#__PURE__*/
 function (_App) {
@@ -47,7 +49,13 @@ function (_App) {
       var _this$props = this.props,
           Component = _this$props.Component,
           pageProps = _this$props.pageProps;
-      return _react.default.createElement(_app.Container, null, _react.default.createElement(_head.default, null), _react.default.createElement(Component, pageProps));
+      var hideSidebar = pageProps.path == '/';
+      return _react.default.createElement(_app.Container, null, _react.default.createElement(_head.default, null), _react.default.createElement(_common.Navbar, {
+        path: pageProps.path
+      }), hideSidebar ? _react.default.createElement("div", null) : _react.default.createElement(_common.Sidebar, {
+        title: pageProps.title,
+        links: pageProps.subLink
+      }), _react.default.createElement(Component, pageProps));
     }
   }], [{
     key: "getInitialProps",

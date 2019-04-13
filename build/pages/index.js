@@ -7,6 +7,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
+
+var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
+
 var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
 
 var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
@@ -21,7 +25,9 @@ var _react = _interopRequireDefault(require("react"));
 
 var _component = require("../component");
 
-var _services = require("../services");
+var _reactHtml5CameraPhoto = _interopRequireDefault(require("react-html5-camera-photo"));
+
+var _reactWebcam = _interopRequireDefault(require("react-webcam"));
 
 var App =
 /*#__PURE__*/
@@ -34,15 +40,39 @@ function (_React$Component) {
   }
 
   (0, _createClass2.default)(App, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      (0, _services.saveToDB)('new user');
-    }
-  }, {
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", null, "this is homepage!");
+      console.log(this.props);
+      return _react.default.createElement("div", null, _react.default.createElement(_reactWebcam.default, null));
     }
+  }], [{
+    key: "getInitialProps",
+    value: function () {
+      var _getInitialProps = (0, _asyncToGenerator2.default)(
+      /*#__PURE__*/
+      _regenerator.default.mark(function _callee(ctx) {
+        return _regenerator.default.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                return _context.abrupt("return", {
+                  path: ctx.asPath
+                });
+
+              case 1:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function getInitialProps(_x) {
+        return _getInitialProps.apply(this, arguments);
+      }
+
+      return getInitialProps;
+    }()
   }]);
   return App;
 }(_react.default.Component);

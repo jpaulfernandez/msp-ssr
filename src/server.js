@@ -10,6 +10,8 @@ import bodyParser from 'body-parser';
 import LRUCache from 'lru-cache';
 import mongoose from 'mongoose';
 
+import router from './api/routes';
+
 
 class Server {
     constructor() {
@@ -17,13 +19,6 @@ class Server {
         this.nextApp = next({dir:'./src', dev});
         this.expressApp = express();
         this.configureExpressServer();
-        this.configureCustomNextServer();
-        this.connectToMongo().then(res => {
-            console.log('connected to db');
-        }, err => {
-            console.log('connection to database failed');
-            console.log(err);
-        });
         this.ssrCache = new LRUCache({
             max: 100 * 1024 * 1024, /* cache size will be 100 MB using `return n.length` as length() function */
             length: function (n, key) {
@@ -41,6 +36,7 @@ class Server {
         this.expressApp.use(compression());
         this.expressApp.use(morgan('common'));
         this.expressApp.use(helmet());
+        this.configureCustomNextServer();
     }
 
     configureCustomNextServer() {
@@ -57,30 +53,19 @@ class Server {
             //     /* serving page */
             //     return this.renderAndCache(req, res)
             // });
+            //==== Use this to disable caching
 
-            //==== Use this to disable caching 
+            this.expressApp.use('/api', router);
             this.expressApp.get('*', (req, res) => {
                 handle(req, res);
-            })
-    
+            });
+
+           
         });        
     }
 
     connectToMongo() {
-        const options = {
-            useNewUrlParser: true,
-            useCreateIndex: true,
-            useFindAndModify: false,
-            autoIndex: false, 
-            reconnectTries: Number.MAX_VALUE, 
-            reconnectInterval: 500, 
-            poolSize: 10, 
-            bufferMaxEntries: 0,
-            connectTimeoutMS: 10000, 
-            socketTimeoutMS: 45000, 
-            family: 4 
-          };
-        return mongoose.connect('mongo://mspmongo:27017/msp', options);
+        
     }
 
     static Bootstrap() {
@@ -127,4 +112,8 @@ class Server {
 
 let server = Server.Bootstrap();
 export default server.expressApp;
-// server.configure();
+// // server.configure();
+// server.expressApp.listen(5000, err => {
+//     if (err) throw err;
+//     console.log('listening on port 5000');
+// })
